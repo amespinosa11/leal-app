@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginCredentials } from '../../models/user';
+import { AuthService } from '../../services/auth/auth.service';
+import { Router } from '@angular/router';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  input: LoginCredentials;
+
+  constructor( private authService: AuthService, private router: Router ) { }
 
   ngOnInit() {
+    this.input = {
+      email: '',
+      password: ''
+    };
+  }
+
+  login() {
+    this.authService.login(this.input)
+    .subscribe( (response: any) => {
+      sessionStorage.setItem('token', response.token);
+      sessionStorage.setItem('user', JSON.stringify(response.user));
+      this.router.navigate(['/home']);
+    },
+    (error: any) => {
+      console.log('An error has ocurred' + error);
+    });
   }
 
 }

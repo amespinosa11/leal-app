@@ -1,0 +1,23 @@
+<div class="container my-5">
+    <mat-list>
+        <h3 mat-subheader>Transactions</h3>
+        <h3 *ngIf="apiError"> No fue posible traer las transacciones </h3>
+        <mat-list-item *ngFor="let transaction of transactions">
+            <div class="row w-100">
+                <div class="col-1">
+                    <mat-icon *ngIf="transaction.type == 'earn'" class="green-icon" mat-list-icon>repeat</mat-icon>
+                    <mat-icon *ngIf="transaction.type == 'redeem'" class="red-icon" mat-list-icon>repeat</mat-icon>
+                </div>
+                <div class="col-8">
+                    <h4 mat-line> <strong>Type: </strong> {{transaction.type}}</h4>
+                    <p mat-line> {{transaction.createdDate | date}} </p>
+                </div>
+                <div class="col-lg-3">
+                    <p mat-line> <strong>Value: </strong> {{ transaction.value | number }} </p>
+                    <p mat-line> <strong>Points: </strong> {{ transaction.points | number }} </p>
+                </div>
+            </div>
+            <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+</div>
