@@ -24,7 +24,7 @@ import { PagesModule } from './components/pages/pages.module';
     MaterialModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [MaterialModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
