@@ -1,28 +1,79 @@
 # LealApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+Leal - App es una aplicación que permite visualizar las transacciones realizadas por los usuarios que se encuentren registrados. La información mostrada es consumida a traves de los servicios disponibles en el siguiente link(https://pruebatecnica.puntosleal.com/).
+
+La calidad del código es analizada utilizando Codacity.
+
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/30b78dfe29134ba2b8ae548588055a06)](https://app.codacy.com/project/am.espinosa11/leal-app/dashboard?bid=12589703)
 
-## Development server
+## Donde visualizar
+Este proyecto se encuentra desplegado con githubpages. Para visualizarlo ingresar al siguiente link XX.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Instalación
 
-## Code scaffolding
+A continuación se presentan los requisitos y los pasos para realizar la instalación del proyecto.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Requisitos
 
-## Build
+- Node JS (https://nodejs.org/es/download/)
+- NPM (https://www.npmjs.com/)
+- Angular CLI (https://cli.angular.io/)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Clonar
 
-## Running unit tests
+Se puede clonar el proyecto utilizando el el siguiente comando.
+```sh
+git clone https://github.com/amespinosa11/leal-app.git
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Setup
 
-## Running end-to-end tests
+Primero, es necesario enocntrarse en la carpeta del proyecto y se deben instalar las dependencias de este.
+```sh
+cd leal-app
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+npm install
+```
+Ahora es posible correr un servidor de desarrollo y ver el proyecto en `http://localhost:4200/`.
+```sh
+ng serve
+```
 
-## Further help
+## Funcionalidades
+- Inicio de sesión de los usuarios.
+- Visualizar historial con las transacciones realizadas por el usuario.
+- Visualizar detalles de cada transacción resalizada.
+- Filtro por fechas y por tipo de transacción.
+- Mobile first y responsive.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Diseño
+
+La aplicación se encuentra construida siguiendo el esquema de desarrollo en Angular con Componentes.
+
+### Componentes
+- LoginComponent: Componente con la información de inicio de sesión.
+- DialogOverviewDialog: Modal que recibe un objecto con la información de la transacción y la presenta.
+- Home: Componente en donde se muestra el historial de transacciones.
+- Navbar: Barra de navegación de la aplicación.
+
+### Servicios
+- Auth: Se encarga de realizar peticiones con las credenciales de autenticación y verificar si el usuario puede ingresar a la aplicación.
+- Transactions: Se encarga de realizar peticiones al servicio de transacciones y traer la información correspondiente.
+
+### Pipes
+- Search: Se encarga de filtrar en un arreglo de acuerdo a los parametros ingresados, por ejemplo, por tipo de transacción.
+
+## Tecnologías utilizadas
+- Angular 7
+- Bootstrap 4
+- Angular Material
+- Animates CSS
+
+Este proyecto se genero utilizando Angular CLI con la version 7.3.6.
+
+## Autor
+- Ana María Espinosa Chaparro
+
+## Licensia
+This project is licensed under the MIT License - see the LICENSE(https://github.com/amespinosa11/leal-app/blob/master/LICENSE) file for details.
+
