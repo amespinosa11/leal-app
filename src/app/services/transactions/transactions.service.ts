@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class TransactionsService {
 
-  private apiUrl = `${environment.apiUrl}`;
+  private apiUrl = 'https://pruebatecnica.puntosleal.com/';
 
   constructor( private http: HttpClient ) { }
 

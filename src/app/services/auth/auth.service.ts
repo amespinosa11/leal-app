@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LoginCredentials } from '../../models/user';
-import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -9,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  private apiUrl = `${environment.apiUrl}`;
+  private apiUrl = 'https://pruebatecnica.puntosleal.com/';
 
   constructor( private http: HttpClient, private router: Router ) { }
 
