@@ -7,7 +7,7 @@ La calidad del código es analizada utilizando Codacity.
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/30b78dfe29134ba2b8ae548588055a06)](https://app.codacy.com/project/am.espinosa11/leal-app/dashboard?bid=12589703)
 
 ## Donde visualizar
-Este proyecto se encuentra desplegado con githubpages. Para visualizarlo ingresar al siguiente link XX.
+Este proyecto se encuentra desplegado con githubpages. Para visualizarlo ingresar al siguiente link `https://amespinosa11.github.io/leal-app/`.
 
 ## Instalación
 
