@@ -1,6 +1,7 @@
 # LealApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/30b78dfe29134ba2b8ae548588055a06)](https://app.codacy.com/project/am.espinosa11/leal-app/dashboard?bid=12589703)
 
 ## Development server
 
