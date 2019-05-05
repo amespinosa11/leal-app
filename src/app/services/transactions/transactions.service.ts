@@ -14,9 +14,9 @@ export class TransactionsService {
   constructor( private http: HttpClient ) { }
 
   getTransactions( startDate: any, endDate: any ) {
-    const url = `${ this.apiUrl }api/user/my/transactions`;
+    let url = `${ this.apiUrl }api/user/my/transactions`;
+    url += this.checkDates(startDate, endDate);
     const token = sessionStorage.getItem('token');
-    console.log(token);
 
     const HEADERS = new HttpHeaders({
       Authorization: `Bearer ${ token }`
@@ -24,6 +24,17 @@ export class TransactionsService {
 
     return this.http.get(url , { headers: HEADERS })
             .pipe( map ( (response: any) => response.data ));
+  }
+
+  checkDates( startDate: any, endDate: any ): string {
+    if ( startDate !== '' && endDate !== '' ) {
+      return `?startDate=${startDate}&endDate=${endDate}`;
+    } else if ( startDate !== '' ) {
+      return `?startDate=${startDate}`;
+    } else if ( endDate !== '' ) {
+      return `?endDate=${endDate}`;
+    }
+    return '';
   }
 
 }

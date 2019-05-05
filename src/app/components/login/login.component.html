@@ -7,20 +7,25 @@
                 </mat-card-title>
             </mat-card-header>
         </div>
-        <div class="mx-5">
-            <mat-card-content>
-                <mat-form-field class="example-full-width">
-                    <input [(ngModel)]="input.email" matInput placeholder="Email" type="email">
-                </mat-form-field>
-                <mat-form-field class="example-full-width">
-                    <input [(ngModel)]="input.password" matInput placeholder="Password" type="password">
-                </mat-form-field>
-            </mat-card-content>
-        </div>
-        <div class="mx-5">
-            <mat-card-actions>
-                <button mat-raised-button color="primary" class="w-100" (click)="login()">Login</button>
-            </mat-card-actions>
-        </div>
+        <form>
+            <div class="mx-5">
+                <mat-card-content>
+                    <mat-form-field class="example-full-width">
+                        <input [(ngModel)]="input.email" matInput placeholder="Email" type="email" name="email">
+                    </mat-form-field>
+                    <p *ngIf="emailError" class="text-danger">This field may not be blank</p>
+                    <mat-form-field class="example-full-width">
+                        <input [(ngModel)]="input.password" matInput placeholder="Password" type="password" name="password">
+                    </mat-form-field>
+                    <p *ngIf="passwordError" class="text-danger">This field may not be blank</p>
+                    <p *ngIf="nonFieldError" class="text-danger">{{ errorMessage }}</p>
+                </mat-card-content>
+            </div>
+            <div class="mx-5">
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" class="w-100" (click)="login()">Login</button>
+                </mat-card-actions>
+            </div>
+        </form>
     </mat-card>
 </div>
